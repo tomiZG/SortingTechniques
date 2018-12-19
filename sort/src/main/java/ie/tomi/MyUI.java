@@ -49,19 +49,20 @@ public class MyUI extends UI {
         Slider thisManyToSort = new Slider(1, 100);
         thisManyToSort.setCaption("How large shall the array be?");
         //durationSlider.setOrientation(SliderOrientation.HORIZONTAL);
-        thisManyToSort.setWidth("200px");
+        thisManyToSort.setWidth("250px");
             
         // The ComboBox which sort technique shall be applied
-        ComboBox<String> sortCombo = new ComboBox<>("Which sorting technique?");
-        sortCombo.setItems("No", "Yes");
-        
-        // Put slider and ComboBox in horizontal line
+        ComboBox<String> sortCombo = new ComboBox<>("Which sorting technique do you apply?");
+        sortCombo.setItems("Bubble", "Insertion", "Selection", "Merge Sort");
 
+        // The run button
+        Button run = new Button("Run");
+
+
+        // Put slider and ComboBox in horizontal line
         asks.addComponents(thisManyToSort, sortCombo);
         
-        
-        layout.addComponents(heading1, asks);
-
+        layout.addComponents(heading1, asks, run);
         
         setContent(layout);
     }

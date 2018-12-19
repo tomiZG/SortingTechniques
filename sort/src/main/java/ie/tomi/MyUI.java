@@ -36,6 +36,7 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
+        final HorizontalLayout asks = new HorizontalLayout();
 
         // The heading and subtitle
         Label heading1 = new Label(
@@ -44,8 +45,23 @@ public class MyUI extends UI {
             "<h6>prompts for sorting technique to be applied upon unsorted array, sorts the array, prints number of passes.</h6>");
             heading1.setContentMode(com.vaadin.shared.ui.ContentMode.HTML);
         
-               
-        layout.addComponents(heading1);
+        // The slider, thisManyToSort
+        Slider thisManyToSort = new Slider(1, 100);
+        thisManyToSort.setCaption("How large shall the array be?");
+        //durationSlider.setOrientation(SliderOrientation.HORIZONTAL);
+        thisManyToSort.setWidth("200px");
+            
+        // The ComboBox which sort technique shall be applied
+        ComboBox<String> sortCombo = new ComboBox<>("Which sorting technique?");
+        sortCombo.setItems("No", "Yes");
+        
+        // Put slider and ComboBox in horizontal line
+
+        asks.addComponents(thisManyToSort, sortCombo);
+        
+        
+        layout.addComponents(heading1, asks);
+
         
         setContent(layout);
     }

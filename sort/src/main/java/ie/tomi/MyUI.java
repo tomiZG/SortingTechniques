@@ -49,7 +49,7 @@ public class MyUI extends UI {
         Slider thisManyToSort = new Slider(1, 100);
         thisManyToSort.setCaption("How large shall the array be?");
         //durationSlider.setOrientation(SliderOrientation.HORIZONTAL);
-        thisManyToSort.setWidth("250px");
+        thisManyToSort.setWidth("220px");
             
         // The ComboBox which sort technique shall be applied
         ComboBox<String> sortCombo = new ComboBox<>("Which sorting technique do you apply?");
